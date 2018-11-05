@@ -12,14 +12,12 @@ namespace IndygoWeb.Models
         public string KeycodeId { get; set; }
         public Keycode Keycode { get; set; }
         
-        [Required]
         [ForeignKey("Token")]
         public string TokenId { get; set; }
         public Token Token { get; set; }
 
         public DateTime BanDate { get; set; }
         
-        [Required]
         [DefaultValue("Terms of Service violation.")]
         public string BanReason { get; set; }
     }

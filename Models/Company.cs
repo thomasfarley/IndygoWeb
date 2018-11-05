@@ -7,8 +7,7 @@ namespace IndygoWeb.Models
     {
         [Key]
         public int CompanyId { get; set; }
-
-        [Required]
+        
         [MaxLength(50)]
         public string CompanyName { get; set; }
 

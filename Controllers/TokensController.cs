@@ -23,7 +23,8 @@ namespace IndygoWeb.Controllers
             return db.Tokens;
         }
 
-        // GET: api/Tokens/5
+        
+        [Route("api/Tokens/{id}")]
         [ResponseType(typeof(Token))]
         public async Task<IHttpActionResult> GetToken(string id)
         {

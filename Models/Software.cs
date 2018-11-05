@@ -10,8 +10,7 @@ namespace IndygoWeb.Models
         [ForeignKey("Token")]
         public string TokenId { get; set; } 
         public Token Token { get; set; }
-
-        [Required]
+        
         [MaxLength(50)]
         public string SoftwareName { private get; set; }
 

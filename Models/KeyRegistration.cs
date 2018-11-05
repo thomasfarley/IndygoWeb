@@ -11,13 +11,11 @@ namespace IndygoWeb.Models
         [ForeignKey("Keycode")]
         public string KeycodeId { get; set; }
         public Keycode Keycode { get; set; }
-
-        [Required]
+        
         [ForeignKey("Token")]
         public string TokenId { get; set; }
         public Token Token { get; set; }
-
-        [Required]
+        
         public DateTime RegistrationDate
         {
             get

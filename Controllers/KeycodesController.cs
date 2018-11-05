@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using IndygoWeb.AuthModels;
 using IndygoWeb.Models;
 
 namespace IndygoWeb.Controllers
@@ -18,17 +19,32 @@ namespace IndygoWeb.Controllers
         private IndygoContext db = new IndygoContext();
 
         // GET: api/Keycodes
+        /*
         public IQueryable<Keycode> GetKeycodes()
         {
             return db.Keycodes;
         }
-
-        // GET: api/Keycodes/5
-        [ResponseType(typeof(Keycode))]
-        public async Task<IHttpActionResult> GetKeycode(string id)
+        */
+        
+        [Route("api/Keycodes/validate")]
+        public async Task<object> PostValidateKeyAsync([FromBody]KeyAuth key)
         {
-            Keycode keycode = await db.Keycodes.FindAsync(id);
-            if (keycode == null)
+            Keycode _keycode = await db.Keycodes.FindAsync(key.keyCode);
+            if (_keycode == null || _keycode.TokenId != key.tokenId)
+            {
+                return null;
+            }
+
+            //Key can be registered
+            return new { Test = "Test" };
+        }
+
+        [ResponseType(typeof(Keycode))]
+        public async Task<IHttpActionResult> GetKeycode(string keycode)
+        {
+
+            Keycode _keycode = await db.Keycodes.FindAsync(keycode);
+            if (_keycode == null)
             {
                 return NotFound();
             }
@@ -72,7 +88,7 @@ namespace IndygoWeb.Controllers
         }
 
         // POST: api/Keycodes
-        [ResponseType(typeof(Keycode))]
+       /*[ResponseType(typeof(Keycode))]
         public async Task<IHttpActionResult> PostKeycode(Keycode keycode)
         {
             if (!ModelState.IsValid)
@@ -99,7 +115,7 @@ namespace IndygoWeb.Controllers
             }
 
             return CreatedAtRoute("DefaultApi", new { id = keycode.KeycodeId }, keycode);
-        }
+        }*/
 
         // DELETE: api/Keycodes/5
         [ResponseType(typeof(Keycode))]

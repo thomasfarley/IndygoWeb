@@ -11,15 +11,12 @@ namespace IndygoWeb.Models
         public string Username { get; set; }
 
         [MaxLength(75)]
-        [Required]
         [DefaultValue("Test")]
         public string Password { get; private set; }//ToDo hashing
-
-        [Required]
+        
         [MaxLength(75)]
         public string Email { get; set; }
-
-        [Required]
+        
         public DateTime DateRegistered
         {
             get

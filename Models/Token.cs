@@ -19,8 +19,7 @@ namespace IndygoWeb.Models
         [ForeignKey("Company")]
         public int CompanyId { get; set; }
         public Company Company { get; set; }
-
-        [Required]
+        
         public DateTime TimeCreated
         {
             get
@@ -33,8 +32,7 @@ namespace IndygoWeb.Models
             }
         }
         private DateTime? timeCreated = null;
-
-        [Required]
+        
         [DefaultValue(false)]
         public bool IsDisabled { get; set; }
     }

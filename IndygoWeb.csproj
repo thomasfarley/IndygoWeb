@@ -222,6 +222,10 @@
     <Compile Include="Migrations\201811010146094_2.Designer.cs">
       <DependentUpon>201811010146094_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811050311523_4.cs" />
+    <Compile Include="Migrations\201811050311523_4.Designer.cs">
+      <DependentUpon>201811050311523_4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\IndygoContext.cs" />
@@ -329,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811010146094_2.resx">
       <DependentUpon>201811010146094_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811050311523_4.resx">
+      <DependentUpon>201811050311523_4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

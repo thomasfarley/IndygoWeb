@@ -30,7 +30,7 @@ namespace IndygoWeb.Controllers
             User user = await db.Users.FindAsync(id);
             if (user == null)
             {
-                return NotFound();
+                return Ok(user);
             }
 
             return Ok(user);

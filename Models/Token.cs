@@ -16,9 +16,8 @@ namespace IndygoWeb.Models
         [Key]
         public string TokenId { get; set; }
 
-        [Required]
         [ForeignKey("Company")]
-        public uint CompanyId { get; set; }
+        public int CompanyId { get; set; }
         public Company Company { get; set; }
 
         [Required]
@@ -30,7 +29,7 @@ namespace IndygoWeb.Models
             }
             set
             {
-                this.timeCreated = value;
+                timeCreated = value;
             }
         }
         private DateTime? timeCreated = null;

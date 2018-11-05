@@ -28,10 +28,6 @@ namespace IndygoWeb.Controllers
         public async Task<IHttpActionResult> GetToken(string id)
         {
             Token token = await db.Tokens.FindAsync(id);
-            if (token == null)
-            {
-                return NotFound();
-            }
 
             return Ok(token);
         }

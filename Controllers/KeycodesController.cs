@@ -35,8 +35,9 @@ namespace IndygoWeb.Controllers
                 return null;
             }
 
-            //Key can be registered
-            return new { Test = "Test" };
+            //Key can be registered.
+            //For debugging, simply return the keycode for now
+            return _keycode;
         }
 
         [ResponseType(typeof(Keycode))]

@@ -90,6 +90,7 @@ namespace IndygoWeb.Controllers
             {
                 if (UserExists(user.Username))
                 {
+                   
                     return Conflict();
                 }
                 else

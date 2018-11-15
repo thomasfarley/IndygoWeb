@@ -6,7 +6,6 @@ namespace IndygoWeb.Models
 {
     public class UserCompany
     {
-
         [Key]
         [ForeignKey("Company")]
         public int CompanyId { get; set; }
